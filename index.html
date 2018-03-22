@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" integrity="sha256-VyWNo3nreq7kl76bp/ETa0Tbq3FVqCd6wCMF49aGP4c=" crossorigin="anonymous" />
+	<style>
+		audio {
+			display: block;
+			height: 48px;
+		}
+	</style>
+</head>
+<body>
+	<div class="uk-container">
+		<ul uk-tab uk-switcher>
+			<li class="uk-active"><a href="#">Environment</a></li>
+			<li><a href="#">Steam</a></li>
+			<li><a href="#">Diesel</a></li>
+		</ul>
+		
+		<ul class="uk-switcher">
+			<li>
+				<p>
+					Countryside
+					<audio controls preload class="loop fade" data-volume="0.4">
+						<source src="countryside.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+				</p>
+				<p>
+					Station
+					<audio controls preload class="loop fade" data-volume="0.5">
+						<source src="conversation.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+				</p>
+			</li>
+			
+			<li>
+				<p>
+					Steam
+					<audio controls preload class="loop fade" data-volume="0.1">
+						<source src="stationary.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+				</p>
+				<p>
+					Start
+					<audio controls preload class="fade" data-volume="0.5">
+						<source src="start.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+				</p>
+				<p>
+					Slow
+					<audio controls preload class="loop fade" data-volume="0.5">
+						<source src="slow.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+				</p>
+				<p>
+					Medium
+					<audio controls preload class="loop fade" data-volume="0.4">
+						<source src="medium.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+				</p>
+				<p>
+					Fast
+					<audio controls preload class="loop fade" data-volume="0.3">
+						<source src="constant.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+				</p>
+			</li>
+			
+			<li>
+				<p>
+					Engine
+					<audio controls preload class="loop fade" data-volume="0.2">
+						<source src="diesel.ogg" type="audio/ogg">
+					</audio>
+					<button class="uk-button uk-button-primary stop-btn">Stop</button>
+					<span class="uk-button-group">
+						<button class="uk-button uk-button-default idle-btn">Idle</button>
+						<button class="uk-button uk-button-default rev-btn">Rev</button>
+					</span>
+				</p>
+			</li>
+		</ul>
+		
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js" integrity="sha256-wpeKFfumxNfqAlC4/AkTbuhMaUp72QxUIjEkyFpH1Jc=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
