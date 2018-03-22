@@ -4,97 +4,138 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>LocoSound</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" integrity="sha256-VyWNo3nreq7kl76bp/ETa0Tbq3FVqCd6wCMF49aGP4c=" crossorigin="anonymous" />
 	<style>
 		audio {
-			display: block;
-			height: 48px;
+			display: none;
 		}
 	</style>
 </head>
 <body>
 	<div class="uk-container">
+		<h1>LocoSound</h1>
+
 		<ul uk-tab uk-switcher>
-			<li class="uk-active"><a href="#">Environment</a></li>
+			<li class="uk-active"><a href="#"><span uk-icon="info"></span></a></li>
+			<li><a href="#">Environment</a></li>
 			<li><a href="#">Steam</a></li>
 			<li><a href="#">Diesel</a></li>
 		</ul>
 		
 		<ul class="uk-switcher">
 			<li>
-				<p>
-					Countryside
+				<p>This little webapp was created by Matthew Dawkins as a simple way of making sound effects for a small DC model railway. The idea is simply to run this on a phone (or other device), ideally connected to a speaker mounted somewhere on the layout, and use the controls simultaneously to controlling a locomotive.</p>
+				<p>If you have any suggestions or improvements, feel free to contact me on Twitter: <a href="https://www.twitter.com/mafu_d" target="_blank">@mafu_d</a>.</p>
+				<h4>Environment</h4>
+				<p>These sounds will play on loop until you stop them.</p>
+				<h4>Steam</h4>
+				<p>These sounds are recorded from on board a Class A1X Terrier.</p>
+				<p>The 'steam' sound is good for a steam loco at rest, or idling. Once the loco is in motion, this could be turned off, and perhaps reinstated as the loco coasts to a stop.</p>
+				<p>The 'start' sound is a preset recording of the full starting process, from pulling away to gathering speed. This does not loop. It is advisable to swap out to one of the other sounds at some point as necessary.</p>
+				<p>The 'slow', 'medium' and 'fast' sounds are as you'd expect, and loop indefinitely.</p>
+				<h4>Diesel</h4>
+				<p>This is a single sound of a diesel engine idling.</p>
+				<p>To simulate increasing the throttle, the 'rev' button will increase the volume and speed of the recording, which currently isn't very realistic, but will suffice for the moment.</p>
+			</li>
+			<li>
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Countryside</h4>
 					<audio controls preload class="loop fade" data-volume="0.4">
 						<source src="countryside.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-				</p>
-				<p>
-					Station
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+					</div>
+				</div>
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Station</h4>
 					<audio controls preload class="loop fade" data-volume="0.5">
 						<source src="conversation.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-				</p>
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+					</div>
+				</div>
 			</li>
 			
 			<li>
-				<p>
-					Steam
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Steam</h4>
 					<audio controls preload class="loop fade" data-volume="0.1">
 						<source src="stationary.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-				</p>
-				<p>
-					Start
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+					</div>
+				</div>
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Start</h4>
 					<audio controls preload class="fade" data-volume="0.5">
 						<source src="start.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-				</p>
-				<p>
-					Slow
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+					</div>
+				</div>
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Slow</h4>
 					<audio controls preload class="loop fade" data-volume="0.5">
 						<source src="slow.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-				</p>
-				<p>
-					Medium
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+					</div>
+				</div>
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Medium</h4>
 					<audio controls preload class="loop fade" data-volume="0.4">
 						<source src="medium.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-				</p>
-				<p>
-					Fast
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+					</div>
+				</div>
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Fast</h4>
 					<audio controls preload class="loop fade" data-volume="0.3">
 						<source src="constant.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-				</p>
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+					</div>
+				</div>
 			</li>
 			
 			<li>
-				<p>
-					Engine
+				<div uk-grid>
+					<h4 class="uk-width-1-2 uk-width-1-4@m uk-width-1-8@l">Engine</h4>
 					<audio controls preload class="loop fade" data-volume="0.2">
 						<source src="diesel.ogg" type="audio/ogg">
 					</audio>
-					<button class="uk-button uk-button-primary stop-btn">Stop</button>
-					<span class="uk-button-group">
-						<button class="uk-button uk-button-default idle-btn">Idle</button>
-						<button class="uk-button uk-button-default rev-btn">Rev</button>
-					</span>
-				</p>
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary start-btn">Start</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Stop</button>
+						<span class="uk-button-group">
+							<button class="uk-button uk-button-default idle-btn">Idle</button>
+							<button class="uk-button uk-button-default rev-btn">Rev</button>
+						</span>
+					</div>
+				</div>
 			</li>
 		</ul>
 		
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js" integrity="sha256-wpeKFfumxNfqAlC4/AkTbuhMaUp72QxUIjEkyFpH1Jc=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js" integrity="sha256-ygOvSgNXVQ3nXNfd5lsn+a6k4THX1tW24aOwm6qMCxI=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>

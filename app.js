@@ -7,11 +7,18 @@ $(function() {
             loopAudio($(this));
         }
     });
+    $('.start-btn').click(function() {
+        $(this).parent().siblings('audio')[0].play();
+        $(this).parent().children('.uk-button-primary').toggleClass('uk-hidden');
+    });
     $('.stop-btn').click(function() {
-        var audio = $(this).siblings('audio');
+        $(this).attr('disabled', true);
+        var audio = $(this).parent().siblings('audio');
         audio.animate({volume: 0}, 1000, function() {
+            console.log($(this));
             audio[0].pause();
             audio[0].currentTime = 0;
+            audio.parent().find('.uk-button-primary').removeAttr('disabled').toggleClass('uk-hidden');
         });
     });
     
