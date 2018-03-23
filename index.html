@@ -142,6 +142,16 @@
 			
 			<li>
 				<div uk-grid class="uk-grid-collapse uk-margin">
+					<div class="sound">
+						<audio controls preload class="" data-volume="0.6">
+							<source src="horn.ogg" type="audio/ogg">
+							<source src="horn.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Horn</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Horn</button>
+					</div>
+				</div>
+				<div uk-grid class="uk-grid-collapse uk-margin">
 					<div class="sound" id="idle" data-disable="#rev">
 						<audio controls preload class="loop fade" data-volume="0.2">
 							<source src="diesel.ogg" type="audio/ogg">
