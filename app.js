@@ -1,11 +1,18 @@
 $(function() {
     
-    $('audio.fade').on('play', function() {
-        this.volume = 0;
-        $(this).animate({volume: $(this).attr('data-volume') || 1}, 1000);
+    $('audio').on('play', function() {
+        if ($(this).hasClass('fade')) {
+            this.volume = 0;
+            $(this).animate({volume: $(this).attr('data-volume') || 1}, 1000);
+        }
+        else {
+            this.volume = $(this).attr('data-volume') || 1;
+        }
         if ($(this).hasClass('loop')) {
             loopAudio($(this));
         }
+    }).on('pause', function() {
+        $(this).closest('.sound').find('.uk-button-primary:visible').click();
     });
     $('.start-btn').click(function() {
         $(this).closest('.sound').find('audio')[0].play();
@@ -18,11 +25,18 @@ $(function() {
     $('.stop-btn').click(function() {
         $(this).attr('disabled', true);
         var audio = $(this).closest('.sound').find('audio');
-        audio.animate({volume: 0}, 1000, function() {
+        if (audio.hasClass('fade')) {
+            audio.animate({volume: 0}, 1000, function() {
+                audio[0].pause();
+                audio[0].currentTime = 0;
+                audio.closest('.sound').find('.uk-button').removeAttr('disabled').toggleClass('uk-hidden');
+            });
+        }
+        else {
             audio[0].pause();
             audio[0].currentTime = 0;
             audio.closest('.sound').find('.uk-button').removeAttr('disabled').toggleClass('uk-hidden');
-        });
+        }
     });
 
     

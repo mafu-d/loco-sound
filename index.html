@@ -13,6 +13,9 @@
 		.uk-tab li:not(:first-child) {
 			padding-left: 0;
 		}
+		.uk-button {
+			padding: 0 15px;
+		}
 	</style>
 </head>
 <body>
@@ -78,7 +81,20 @@
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Steam</button>
 					</div>
 					<div class="sound">
-						<button class="uk-button uk-button-default start-btn" disabled>Whistle</button>
+						<audio controls preload class="" data-volume="0.3">
+							<source src="whistle_short.ogg" type="audio/ogg">
+							<source src="whistle_short.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Short W</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Short W</button>
+					</div>
+					<div class="sound">
+						<audio controls preload class="" data-volume="0.3">
+							<source src="whistle.ogg" type="audio/ogg">
+							<source src="whistle.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Long W</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Long W</button>
 					</div>
 				</div>
 				<div uk-grid class="uk-grid-collapse uk-margin" id="start">
