@@ -65,7 +65,12 @@
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Station</button>
 					</div>
 					<div class="sound">
-						<button class="uk-button uk-button-default start-btn" disabled>Announcement</button>
+						<audio controls preload class="" data-volume="0.5">
+							<source src="announcement.ogg" type="audio/ogg">
+							<source src="announcement.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Announcement</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Announcement</button>
 					</div>
 				</div>
 			</li>
