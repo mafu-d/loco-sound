@@ -8,35 +8,39 @@ $(function() {
         }
     });
     $('.start-btn').click(function() {
-        $(this).parent().siblings('audio')[0].play();
-        $(this).parent().children('.uk-button-primary').toggleClass('uk-hidden');
+        $(this).closest('.sound').find('audio')[0].play();
+        $(this).closest('.sound').find('.uk-button').toggleClass('uk-hidden');
+        if ($(this).closest('.sound')[0].hasAttribute('data-disable')) {
+            console.log(`Disabling ${$(this).closest('.sound').attr('data-disable')}`);
+            $($(this).closest('.sound').attr('data-disable')).find('.uk-button-primary:visible').click();
+        }
     });
     $('.stop-btn').click(function() {
         $(this).attr('disabled', true);
-        var audio = $(this).parent().siblings('audio');
+        var audio = $(this).closest('.sound').find('audio');
         audio.animate({volume: 0}, 1000, function() {
-            console.log($(this));
             audio[0].pause();
             audio[0].currentTime = 0;
-            audio.parent().find('.uk-button-primary').removeAttr('disabled').toggleClass('uk-hidden');
+            audio.closest('.sound').find('.uk-button').removeAttr('disabled').toggleClass('uk-hidden');
         });
     });
+
     
-    $('.rev-btn').click(function() {
-        var audio = $(this).parent().siblings('audio');
-        audio[0].preservesPitch = false;
-        audio.animate({
-            volume: audio[0].volume + 0.4,
-            playbackRate: 2
-        }, 1000);
-    });
-    $('.idle-btn').click(function() {
-        var audio = $(this).parent().siblings('audio');
-        audio.animate({
-            volume: audio.attr('data-volume'),
-            playbackRate: 1
-        }, 1000);
-    });
+    // $('.rev-btn').click(function() {
+    //     var audio = $(this).parent().siblings('audio');
+    //     audio[0].preservesPitch = false;
+    //     audio.animate({
+    //         volume: audio[0].volume + 0.4,
+    //         playbackRate: 2
+    //     }, 1000);
+    // });
+    // $('.idle-btn').click(function() {
+    //     var audio = $(this).parent().siblings('audio');
+    //     audio.animate({
+    //         volume: audio.attr('data-volume'),
+    //         playbackRate: 1
+    //     }, 1000);
+    // });
 });
 
 function loopAudio(el) {
