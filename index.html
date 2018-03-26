@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>LocoSound</title>
+	<title>LocoSound - sound effects for DC model railways</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" integrity="sha256-VyWNo3nreq7kl76bp/ETa0Tbq3FVqCd6wCMF49aGP4c=" crossorigin="anonymous" />
 	<style>
 		audio {
@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div class="uk-container">
-		<h1>LocoSound</h1>
+		<h1><img src="img/logo.png" alt="LocoSound"></h1>
 
 		<ul uk-tab uk-switcher>
 			<li class="uk-active"><a href="#"><span uk-icon="icon: info; ratio: 0.8"></span></a></li>
@@ -48,8 +48,8 @@
 				<div uk-grid class="uk-grid-collapse uk-margin">
 					<div class="sound">
 						<audio controls preload class="loop fade" data-volume="0.4">
-							<source src="countryside.ogg" type="audio/ogg">
-							<source src="countryside.mp3" type="audio/mp3">
+							<source src="environment/countryside.ogg" type="audio/ogg">
+							<source src="environment/countryside.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Countryside</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Countryside</button>
@@ -58,16 +58,16 @@
 				<div uk-grid class="uk-grid-collapse uk-margin">
 					<div class="sound">
 						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="conversation.ogg" type="audio/ogg">
-							<source src="conversation.mp3" type="audio/mp3">
+							<source src="environment/conversation.ogg" type="audio/ogg">
+							<source src="environment/conversation.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Station</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Station</button>
 					</div>
 					<div class="sound">
 						<audio controls preload class="" data-volume="0.5">
-							<source src="announcement.ogg" type="audio/ogg">
-							<source src="announcement.mp3" type="audio/mp3">
+							<source src="environment/announcement.ogg" type="audio/ogg">
+							<source src="environment/announcement.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Announcement</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Announcement</button>
@@ -79,25 +79,25 @@
 				<div uk-grid class="uk-grid-collapse uk-margin">
 					<div class="sound">
 						<audio controls preload class="" data-volume="0.3">
-							<source src="whistle_short.ogg" type="audio/ogg">
-							<source src="whistle_short.mp3" type="audio/mp3">
+							<source src="steam/whistle_short.ogg" type="audio/ogg">
+							<source src="steam/whistle_short.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Short W</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Short W</button>
 					</div>
 					<div class="sound">
 						<audio controls preload class="" data-volume="0.3">
-							<source src="whistle.ogg" type="audio/ogg">
-							<source src="whistle.mp3" type="audio/mp3">
+							<source src="steam/whistle.ogg" type="audio/ogg">
+							<source src="steam/whistle.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Long W</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Long W</button>
 					</div>
 					<div class="sound">
 						<audio controls preload class="" data-volume="0.2">
-							<source src="guard_whistle.ogg" type="audio/ogg">
+							<source src="steam/guard_whistle.ogg" type="audio/ogg">
 							<source src="guard_whistle.mp3" type="audio/mp3">
-						</audio>
+						</audio>steam/
 						<button class="uk-button uk-button-default start-btn">Guard</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Guard</button>
 					</div>
@@ -105,16 +105,16 @@
 				<div uk-grid class="uk-grid-collapse uk-margin" id="start">
 					<div class="sound">
 						<audio controls preload class="loop fade" data-volume="0.1">
-							<source src="stationary.ogg" type="audio/ogg">
-							<source src="stationary.mp3" type="audio/mp3">
+							<source src="steam/stationary.ogg" type="audio/ogg">
+							<source src="steam/stationary.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Steam</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Steam</button>
 					</div>
 					<div class="sound">
 						<audio controls preload class="fade" data-volume="0.5">
-							<source src="start.ogg" type="audio/ogg">
-							<source src="start.mp3" type="audio/mp3">
+							<source src="steam/start.ogg" type="audio/ogg">
+							<source src="steam/start.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Start</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Start</button>
@@ -123,24 +123,24 @@
 				<div uk-grid class="uk-grid-collapse uk-margin">
 					<div class="sound" id="slow" data-disable="#start, #medium, #fast">
 						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="slow.ogg" type="audio/ogg">
-							<source src="slow.mp3" type="audio/mp3">
+							<source src="steam/slow.ogg" type="audio/ogg">
+							<source src="steam/slow.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Slow</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Slow</button>
 					</div>
 					<div class="sound" id="medium" data-disable="#start, #slow, #fast">
 						<audio controls preload class="loop fade" data-volume="0.4">
-							<source src="medium.ogg" type="audio/ogg">
-							<source src="medium.mp3" type="audio/mp3">
+							<source src="steam/medium.ogg" type="audio/ogg">
+							<source src="steam/medium.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Medium</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Medium</button>
 					</div>
 					<div class="sound" id="fast" data-disable="#start, #slow, #medium">
 						<audio controls preload class="loop fade" data-volume="0.3">
-							<source src="constant.ogg" type="audio/ogg">
-							<source src="constant.mp3" type="audio/mp3">
+							<source src="steam/constant.ogg" type="audio/ogg">
+							<source src="steam/constant.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Fast</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Fast</button>
@@ -152,16 +152,16 @@
 				<div uk-grid class="uk-grid-collapse uk-margin">
 					<div class="sound">
 						<audio controls preload class="" data-volume="0.6">
-							<source src="horn.ogg" type="audio/ogg">
-							<source src="horn.mp3" type="audio/mp3">
+							<source src="diesel/horn.ogg" type="audio/ogg">
+							<source src="diesel/horn.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Horn</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Horn</button>
 					</div>
 					<div class="sound">
 						<audio controls preload class="" data-volume="0.2">
-							<source src="guard_whistle.ogg" type="audio/ogg">
-							<source src="guard_whistle.mp3" type="audio/mp3">
+							<source src="diesel/guard_whistle.ogg" type="audio/ogg">
+							<source src="diesel/guard_whistle.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Guard</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Guard</button>
@@ -170,16 +170,16 @@
 				<div uk-grid class="uk-grid-collapse uk-margin">
 					<div class="sound" id="idle" data-disable="#rev">
 						<audio controls preload class="loop fade" data-volume="0.2">
-							<source src="diesel.ogg" type="audio/ogg">
-							<source src="diesel.mp3" type="audio/mp3">
+							<source src="diesel/diesel.ogg" type="audio/ogg">
+							<source src="diesel/diesel.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Idle</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Idle</button>
 					</div>
 					<div class="sound" id="rev" data-disable="#idle">
 						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="diesel2.ogg" type="audio/ogg">
-							<source src="diesel2.mp3" type="audio/mp3">
+							<source src="diesel/diesel2.ogg" type="audio/ogg">
+							<source src="diesel/diesel2.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Rev</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Rev</button>
