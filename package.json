@@ -1,0 +1,29 @@
+{
+  "name": "loco-sound",
+  "version": "1.0.0",
+  "description": "A simple web app to provide some environment and locomotive sounds for a model railway.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafu-d/loco-sound.git"
+  },
+  "devDependencies": {
+    "laravel-mix": "*",
+    "uikit": "~3.0",
+    "jquery": "~3.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mafu-d/loco-sound/issues"
+  },
+  "homepage": "https://github.com/mafu-d/loco-sound#readme"
+}

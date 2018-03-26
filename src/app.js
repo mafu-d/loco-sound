@@ -1,3 +1,9 @@
+require('../node_modules/jquery/src/jquery');
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+UIkit.use(Icons);
+// require('../node_modules/uikit/src/js/icons');
+
 $(function() {
     
     $('audio').on('play', function() {

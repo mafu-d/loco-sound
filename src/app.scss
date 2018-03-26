@@ -1,0 +1,14 @@
+@import '_variables';
+@import '../node_modules/uikit/src/scss/variables-theme';
+@import '../node_modules/uikit/src/scss/mixins-theme';
+@import '../node_modules/uikit/src/scss/uikit-theme';
+
+audio {
+	display: none;
+}
+.uk-tab li:not(:first-child) {
+	padding-left: 0;
+}
+.uk-button {
+	padding: 0 15px;
+}
