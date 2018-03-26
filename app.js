@@ -1,6 +1,7 @@
 $(function() {
     
     $('audio').on('play', function() {
+        ga('send', 'event', 'audio', 'play', this.currentSrc);
         if ($(this).hasClass('fade')) {
             this.volume = 0;
             $(this).animate({volume: $(this).attr('data-volume') || 1}, 1000);
