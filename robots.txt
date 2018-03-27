@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /mix-manifest.json
+Disallow: /package.json
+Disallow: /README.md
+Disallow: /webpack.mix.js
+Disallow: /yarn.lock
