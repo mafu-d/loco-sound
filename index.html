@@ -129,7 +129,7 @@
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Guard</button>
 					</div>
 				</div>
-				<div uk-grid class="uk-grid-collapse uk-margin" id="start">
+				<div uk-grid class="uk-grid-collapse uk-margin" id="steam">
 					<div class="sound">
 						<audio controls preload class="loop fade" data-volume="0.1">
 							<source src="steam/stationary.ogg" type="audio/ogg">
@@ -138,7 +138,7 @@
 						<button class="uk-button uk-button-default start-btn">Steam</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Steam</button>
 					</div>
-					<div class="sound">
+					<div class="sound" id="start">
 						<audio controls preload class="fade" data-volume="0.5">
 							<source src="steam/start.ogg" type="audio/ogg">
 							<source src="steam/start.mp3" type="audio/mp3">
@@ -148,7 +148,15 @@
 					</div>
 				</div>
 				<div uk-grid class="uk-grid-collapse uk-margin">
-					<div class="sound" id="slow" data-disable="#medium, #fast">
+					<div class="sound" id="slow-slow" data-disable="#start, #slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
+						<audio controls preload class="loop fade" data-volume="0.5">
+							<source src="steam/slow-slow.ogg" type="audio/ogg">
+							<source src="steam/slow-slow.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Slower</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Slower</button>
+					</div>
+					<div class="sound" id="slow" data-disable="#start, #slow-slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
 						<audio controls preload class="loop fade" data-volume="0.5">
 							<source src="steam/slow.ogg" type="audio/ogg">
 							<source src="steam/slow.mp3" type="audio/mp3">
@@ -156,7 +164,15 @@
 						<button class="uk-button uk-button-default start-btn">Slow</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Slow</button>
 					</div>
-					<div class="sound" id="medium" data-disable="#start, #slow, #fast">
+					<div class="sound" id="slow-medium" data-disable="#start, #slow-slow, #slow, #medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
+						<audio controls preload class="loop fade" data-volume="0.5">
+							<source src="steam/slow-medium.ogg" type="audio/ogg">
+							<source src="steam/slow-medium.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Slow-Medium</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Slow-Medium</button>
+					</div>
+					<div class="sound" id="medium" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
 						<audio controls preload class="loop fade" data-volume="0.4">
 							<source src="steam/medium.ogg" type="audio/ogg">
 							<source src="steam/medium.mp3" type="audio/mp3">
@@ -164,13 +180,37 @@
 						<button class="uk-button uk-button-default start-btn">Medium</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Medium</button>
 					</div>
-					<div class="sound" id="fast" data-disable="#start, #slow, #medium">
+					<div class="sound" id="medium-fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #fast, #fast-fast, #fast-fast-fast">
+						<audio controls preload class="loop fade" data-volume="0.4">
+							<source src="steam/medium-fast.ogg" type="audio/ogg">
+							<source src="steam/medium-fast.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Medium-Fast</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Medium-Fast</button>
+					</div>
+					<div class="sound" id="fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #medium-fast, #fast-fast, #fast-fast-fast">
 						<audio controls preload class="loop fade" data-volume="0.3">
 							<source src="steam/constant.ogg" type="audio/ogg">
 							<source src="steam/constant.mp3" type="audio/mp3">
 						</audio>
 						<button class="uk-button uk-button-default start-btn">Fast</button>
 						<button class="uk-button uk-button-primary stop-btn uk-hidden">Fast</button>
+					</div>
+					<div class="sound" id="fast-fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast-fast">
+						<audio controls preload class="loop fade" data-volume="0.3">
+							<source src="steam/fast-fast.ogg" type="audio/ogg">
+							<source src="steam/fast-fast.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Faster</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Faster</button>
+					</div>
+					<div class="sound" id="fast-fast-fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast">
+						<audio controls preload class="loop fade" data-volume="0.3">
+							<source src="steam/fast-fast-fast.ogg" type="audio/ogg">
+							<source src="steam/fast-fast-fast.mp3" type="audio/mp3">
+						</audio>
+						<button class="uk-button uk-button-default start-btn">Fasterer</button>
+						<button class="uk-button uk-button-primary stop-btn uk-hidden">Fasterer</button>
 					</div>
 				</div>
 			</li>
