@@ -5,7 +5,7 @@ UIkit.use(Icons);
 // require('../node_modules/uikit/src/js/icons');
 
 $(function() {
-    
+
     $('audio').on('play', function() {
         ga('send', 'event', 'audio', 'play', this.currentSrc);
         if ($(this).hasClass('fade')) {
@@ -22,12 +22,12 @@ $(function() {
         $(this).closest('.sound').find('.uk-button-primary:visible').click();
     });
     $('.start-btn').click(function() {
-        $(this).closest('.sound').find('audio')[0].play();
-        $(this).closest('.sound').find('.uk-button').toggleClass('uk-hidden');
         if ($(this).closest('.sound')[0].hasAttribute('data-disable')) {
             console.log(`Disabling ${$(this).closest('.sound').attr('data-disable')}`);
             $($(this).closest('.sound').attr('data-disable')).find('.uk-button-primary:visible').click();
         }
+        $(this).closest('.sound').find('audio')[0].play();
+        $(this).closest('.sound').find('.uk-button').toggleClass('uk-hidden');
     });
     $('.stop-btn').click(function() {
         $(this).attr('disabled', true);
@@ -46,7 +46,7 @@ $(function() {
         }
     });
 
-    
+
     // $('.rev-btn').click(function() {
     //     var audio = $(this).parent().siblings('audio');
     //     audio[0].preservesPitch = false;

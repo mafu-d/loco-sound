@@ -6964,8 +6964,8 @@ uid-number@^0.0.6:
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
 
 uikit@~3.0:
-  version "3.0.0-beta.40"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.0.0-beta.40.tgz#d59de0f804a81d40c34d10370e265098955f61f3"
+  version "3.0.0-rc.12"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.0.0-rc.12.tgz#b82346983487f244068312627ff223a3e18a9403"
 
 unbzip2-stream@^1.0.9:
   version "1.2.5"
