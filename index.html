@@ -1,273 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta http-equiv="Content-Security-Policy" content="default-src 'self' ; script-src 'self' www.google-analytics.com 'sha256-X+frRiZATO2ymsbiC5Pkbw9ifkaeDqJIX6tymX0n2Zo='; style-src 'self' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' www.google-analytics.com">
-	<title>LocoSound - sound effects for DC model railways</title>
-	<meta name="description" content="LocoSound provides easy-to-use sound effects for DC model railways, providing environment sounds, steam and diesel locos, and more!">
-	<meta property="og:title" content="LocoSound">
-	<meta property="og:description" content="LocoSound provides easy-to-use sound effects for DC model railways, providing environment sounds, steam and diesel locos, and more!">
-	<meta property="og:image" content="https://mafu-d.github.io/loco-sound/images/logo@2x.png">
-	<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="manifest" href="/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="stylesheet" href="css/app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LocoSound v2</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.14/vuetify.js" crossorigin="anonymous" defer></script>
+    <script src="js/app.v2.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.14/vuetify.min.css" integrity="sha256-RNCkvgBURDou+AgEMw2NP0S2M+bezooYwop/w7mPI3s=" crossorigin="anonymous" />
+    
 </head>
 <body>
-	<div class="uk-container">
-		<h1 class="uk-margin-top"><img src="images/logo.png" srcset="images/logo@2x.png 2x" alt="LocoSound"></h1>
-
-		<ul uk-tab uk-switcher>
-			<li class="uk-active"><a href="#"><span uk-icon="icon: info; ratio: 0.8"></span></a></li>
-			<li><a href="#">Env</a></li>
-			<li><a href="#">Steam</a></li>
-			<li><a href="#">Diesel</a></li>
-		</ul>
-		
-		<ul class="uk-switcher">
-			<li>
-				<p>This little webapp was created by <a href="https://www.twitter.com/mafu_d" target="_blank">@mafu_d</a> as a simple way of making sound effects for a small DC model railway. The idea is simply to run this on a phone (or other device), ideally connected to a speaker mounted somewhere on the layout, and use the controls simultaneously to controlling a locomotive.</p>
-				<p>If you have any suggestions or improvements, feel free to contact me on Twitter: <a href="https://www.twitter.com/mafu_d" target="_blank">@mafu_d</a>.</p>
-				<h4>Environment</h4>
-				<p>These sounds will play on loop until you stop them.</p>
-				<h4>Steam</h4>
-				<p>These sounds are recorded from on board a Class A1X Terrier.</p>
-				<p>The 'steam' sound is good for a steam loco at rest, or idling. Once the loco is in motion, this could be turned off, and perhaps reinstated as the loco coasts to a stop.</p>
-				<p>The 'start' sound is a preset recording of the full starting process, from pulling away to gathering speed. This does not loop. It is advisable to swap out to one of the other sounds at some point as necessary.</p>
-				<p>The 'slow', 'medium' and 'fast' sounds are as you'd expect, and loop indefinitely.</p>
-				<h4>Diesel</h4>
-				<p>This is currently a single source sound of a diesel engine idling, sped up to suggest an increase in revs, which currently isn't very realistic, but will suffice for the moment.</p>
-			</li>
-			<li>
-				<h2 class="uk-hidden">Environment Sounds</h2>
-				<div uk-grid class="uk-grid-collapse uk-margin">
-					<div class="sound">
-						<audio controls preload class="loop fade" data-volume="0.4">
-							<source src="environment/countryside.ogg" type="audio/ogg">
-							<source src="environment/countryside.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Countryside</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Countryside</button>
-					</div>
-					<div class="sound">
-						<audio controls preload class="loop fade" data-volume="0.3">
-							<source src="environment/seaside.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Seaside</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Seaside</button>
-					</div>
-					<div class="sound">
-						<audio controls preload class="loop fade" data-volume="0.6">
-							<source src="environment/town.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Town</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Town</button>
-					</div>
-				</div>
-				<div uk-grid class="uk-grid-collapse uk-margin">
-					<div class="sound">
-						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="environment/conversation.ogg" type="audio/ogg">
-							<source src="environment/conversation.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Station</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Station</button>
-					</div>
-					<div class="sound">
-						<audio controls preload class="" data-volume="0.5">
-							<source src="environment/announcement.ogg" type="audio/ogg">
-							<source src="environment/announcement.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Announcement</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Announcement</button>
-					</div>
-				</div>
-			</li>
-			
-			<li>
-				<h2 class="uk-hidden">Steam Locomotive Sounds</h2>
-				<div uk-grid class="uk-grid-collapse uk-margin">
-					<div class="sound">
-						<audio controls preload class="" data-volume="0.3">
-							<source src="steam/whistle_short.ogg" type="audio/ogg">
-							<source src="steam/whistle_short.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Short W</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Short W</button>
-					</div>
-					<div class="sound">
-						<audio controls preload class="" data-volume="0.3">
-							<source src="steam/whistle.ogg" type="audio/ogg">
-							<source src="steam/whistle.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Long W</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Long W</button>
-					</div>
-					<div class="sound">
-						<audio controls preload class="" data-volume="0.2">
-							<source src="steam/guard_whistle.ogg" type="audio/ogg">
-							<source src="steam/guard_whistle.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Guard</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Guard</button>
-					</div>
-				</div>
-				<div uk-grid class="uk-grid-collapse uk-margin" id="steam">
-					<div class="sound">
-						<audio controls preload class="loop fade" data-volume="0.1">
-							<source src="steam/stationary.ogg" type="audio/ogg">
-							<source src="steam/stationary.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Steam</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Steam</button>
-					</div>
-					<div class="sound" id="start">
-						<audio controls preload class="fade" data-volume="0.5">
-							<source src="steam/start.ogg" type="audio/ogg">
-							<source src="steam/start.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Start</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Start</button>
-					</div>
-				</div>
-				<div uk-grid class="uk-grid-collapse uk-margin">
-					<div class="sound" id="slow-slow" data-disable="#start, #slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="steam/slow-slow.ogg" type="audio/ogg">
-							<source src="steam/slow-slow.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Slower</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Slower</button>
-					</div>
-					<div class="sound" id="slow" data-disable="#start, #slow-slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="steam/slow.ogg" type="audio/ogg">
-							<source src="steam/slow.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Slow</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Slow</button>
-					</div>
-					<div class="sound" id="slow-medium" data-disable="#start, #slow-slow, #slow, #medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="steam/slow-medium.ogg" type="audio/ogg">
-							<source src="steam/slow-medium.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Slow-Medium</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Slow-Medium</button>
-					</div>
-					<div class="sound" id="medium" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium-fast, #fast, #fast-fast, #fast-fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.4">
-							<source src="steam/medium.ogg" type="audio/ogg">
-							<source src="steam/medium.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Medium</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Medium</button>
-					</div>
-					<div class="sound" id="medium-fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #fast, #fast-fast, #fast-fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.4">
-							<source src="steam/medium-fast.ogg" type="audio/ogg">
-							<source src="steam/medium-fast.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Medium-Fast</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Medium-Fast</button>
-					</div>
-					<div class="sound" id="fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #medium-fast, #fast-fast, #fast-fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.3">
-							<source src="steam/constant.ogg" type="audio/ogg">
-							<source src="steam/constant.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Fast</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Fast</button>
-					</div>
-					<div class="sound" id="fast-fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.3">
-							<source src="steam/fast-fast.ogg" type="audio/ogg">
-							<source src="steam/fast-fast.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Faster</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Faster</button>
-					</div>
-					<div class="sound" id="fast-fast-fast" data-disable="#start, #steam, #slow-slow, #slow, #slow-medium, #medium, #medium-fast, #fast, #fast-fast">
-						<audio controls preload class="loop fade" data-volume="0.3">
-							<source src="steam/fast-fast-fast.ogg" type="audio/ogg">
-							<source src="steam/fast-fast-fast.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Fasterer</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Fasterer</button>
-					</div>
-				</div>
-			</li>
-			
-			<li>
-				<h2 class="uk-hidden">Diesel Locomotive Sounds</h2>
-				<div uk-grid class="uk-grid-collapse uk-margin">
-					<div class="sound">
-						<audio controls preload class="" data-volume="0.6">
-							<source src="diesel/horn.ogg" type="audio/ogg">
-							<source src="diesel/horn.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Horn</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Horn</button>
-					</div>
-					<div class="sound">
-						<audio controls preload class="" data-volume="0.2">
-							<source src="diesel/guard_whistle.ogg" type="audio/ogg">
-							<source src="diesel/guard_whistle.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Guard</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Guard</button>
-					</div>
-				</div>
-				<div uk-grid class="uk-grid-collapse uk-margin">
-					<div class="sound" id="idle" data-disable="#rev">
-						<audio controls preload class="loop fade" data-volume="0.2">
-							<source src="diesel/diesel.ogg" type="audio/ogg">
-							<source src="diesel/diesel.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Idle</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Idle</button>
-					</div>
-					<div class="sound" id="rev" data-disable="#idle">
-						<audio controls preload class="loop fade" data-volume="0.5">
-							<source src="diesel/diesel2.ogg" type="audio/ogg">
-							<source src="diesel/diesel2.mp3" type="audio/mp3">
-						</audio>
-						<button class="uk-button uk-button-default start-btn">Rev</button>
-						<button class="uk-button uk-button-primary stop-btn uk-hidden">Rev</button>
-					</div>
-				</div>
-			</li>
-		</ul>
-		
-	</div>
-	<!-- Google Analytics -->
-	<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-2921564-15', 'auto');
-	ga('send', 'pageview');
-	</script>
-	<!-- End Google Analytics -->
-	<script type="text/javascript" src="js/app.js"></script>
+    <div id="app">
+        <v-app>
+            <v-container>
+                <img src="images/logo.png" alt="LocoSound">
+                <p>Welcome to LocoSound!</p>
+                <p><v-btn @click="addLoco" color="success">Add loco</v-btn></p>
+                <v-tabs v-model="activeLoco">
+                    <v-tab v-for="(loco, index) in locos" :key="index">
+                        {{ loco.name }}
+                    </v-tab>
+                    <v-tab-item v-for="(loco, index) in locos" :key="index">
+                        <p>
+                            <v-text-field type="text" label="Loco name" v-model="loco.name"></v-text-field>
+                        </p>
+                        <v-switch label="Active" v-model="loco.active"></v-switch>
+                        <v-btn color="info">Whistle</v-btn>
+                        <v-slider v-model="loco.speed" step="0" min="0" max="100" label="Speed"></v-slider>
+                        <p><v-btn @click="removeLoco(index)" color="warning">Remove</v-btn></p>
+                    </v-tab-item>
+                </v-tabs>
+            </v-container>
+        </v-app>
+    </div>
 </body>
 </html>
