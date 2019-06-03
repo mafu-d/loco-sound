@@ -27,7 +27,7 @@
                         {{ loco.name }}
                     </v-tab>
                     <v-tab-item v-for="(loco, index) in locos" :key="index">
-                        <loco :loco="loco"></loco>
+                        <loco :loco="loco" :index="index"></loco>
                     </v-tab-item>
                 </v-tabs>
             </v-container>

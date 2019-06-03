@@ -23,7 +23,8 @@
     "sass-loader": "^7.1.0",
     "vue": "2.6.10",
     "vue-template-compiler": "^2.6.10",
-    "vuetify": "1.5.14"
+    "vuetify": "1.5.14",
+    "howler": "2.1.2"
   },
   "keywords": [],
   "author": "",
