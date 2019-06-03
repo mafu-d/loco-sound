@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LocoSound v2</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.14/vuetify.js" crossorigin="anonymous" defer></script>
     <script src="js/app.v2.js" defer></script>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.14/vuetify.min.css" integrity="sha256-RNCkvgBURDou+AgEMw2NP0S2M+bezooYwop/w7mPI3s=" crossorigin="anonymous" />
-    
+
 </head>
+
 <body>
     <div id="app">
         <v-app>
             <v-container>
                 <img src="images/logo.png" alt="LocoSound">
                 <p>Welcome to LocoSound!</p>
-                <p><v-btn @click="addLoco" color="success">Add loco</v-btn></p>
+                <p>
+                    <v-btn @click="addLoco" color="success">Add loco</v-btn>
+                </p>
                 <v-tabs v-model="activeLoco">
                     <v-tab v-for="(loco, index) in locos" :key="index">
                         {{ loco.name }}
                     </v-tab>
                     <v-tab-item v-for="(loco, index) in locos" :key="index">
-                        <p>
-                            <v-text-field type="text" label="Loco name" v-model="loco.name"></v-text-field>
-                        </p>
-                        <v-switch label="Active" v-model="loco.active"></v-switch>
-                        <v-btn color="info">Whistle</v-btn>
-                        <v-slider v-model="loco.speed" step="0" min="0" max="100" label="Speed"></v-slider>
-                        <p><v-btn @click="removeLoco(index)" color="warning">Remove</v-btn></p>
+                        <loco :loco="loco"></loco>
                     </v-tab-item>
                 </v-tabs>
             </v-container>
         </v-app>
     </div>
 </body>
+
 </html>
