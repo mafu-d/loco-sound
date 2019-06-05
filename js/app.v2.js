@@ -97,7 +97,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var howler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! howler */ "./node_modules/howler/dist/howler.js");
 /* harmony import */ var howler__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(howler__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _app_v2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.v2 */ "./src/app.v2.js");
 //
 //
 //
@@ -106,43 +105,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['loco', 'index'],
-  components: {
-    EventBus: _app_v2__WEBPACK_IMPORTED_MODULE_1__["EventBus"]
-  },
+  props: ['loco'],
   data: function data() {
     return {
-      name: '',
       speed: 0,
       active: false,
       accelerating: false,
       blower: false,
       whistle: false
     };
-  },
-  mounted: function mounted() {
-    this.name = this.loco.name;
-  },
-  watch: {
-    name: function name() {
-      _app_v2__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$emit('updateLocoName', {
-        index: this.index,
-        name: this.name
-      });
-    }
-  },
-  methods: {
-    removeLoco: function removeLoco() {
-      _app_v2__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$emit('removeLoco', this.index);
-    }
   }
 });
 
@@ -4439,23 +4412,6 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "p",
-        [
-          _c("v-text-field", {
-            attrs: { type: "text", label: "Loco name" },
-            model: {
-              value: _vm.name,
-              callback: function($$v) {
-                _vm.name = $$v
-              },
-              expression: "name"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
       _c("v-switch", {
         attrs: { label: "Active" },
         model: {
@@ -4478,26 +4434,7 @@ var render = function() {
           },
           expression: "speed"
         }
-      }),
-      _vm._v(" "),
-      _c(
-        "p",
-        [
-          _c(
-            "v-btn",
-            {
-              attrs: { color: "warning" },
-              on: {
-                click: function($event) {
-                  return _vm.removeLoco(_vm.index)
-                }
-              }
-            },
-            [_vm._v("Remove")]
-          )
-        ],
-        1
-      )
+      })
     ],
     1
   )
@@ -42658,17 +42595,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     EventBus: EventBus
   },
   mounted: function mounted() {
-    var _this = this;
-
-    this.addLoco();
-    EventBus.$on('removeLoco', function (index) {
-      _this.locos.splice(index, 1);
-    });
-    EventBus.$on('updateLocoName', function (data) {
-      _this.locos.splice(data.index, 1, {
-        name: data.name
-      });
-    });
+    for (var i = 0; i < 5; i++) {
+      this.addLoco();
+    }
   },
   methods: {
     addLoco: function addLoco() {

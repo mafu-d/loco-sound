@@ -19,15 +19,15 @@
             <v-container>
                 <img src="images/logo.png" alt="LocoSound">
                 <p>Welcome to LocoSound!</p>
-                <p>
-                    <v-btn @click="addLoco" color="success">Add loco</v-btn>
-                </p>
                 <v-tabs v-model="activeLoco">
-                    <v-tab v-for="(loco, index) in locos" :key="index">
+                    <v-tab v-for="loco in locos" :key="loco.id">
                         {{ loco.name }}
                     </v-tab>
-                    <v-tab-item v-for="(loco, index) in locos" :key="index">
-                        <loco :loco="loco" :index="index"></loco>
+                    <v-tab-item v-for="loco in locos" :key="loco.id">
+                        <p>
+                            <v-text-field type="text" label="Loco name" v-model="loco.name"></v-text-field>
+                        </p>
+                        <loco :loco="loco"></loco>
                     </v-tab-item>
                 </v-tabs>
             </v-container>

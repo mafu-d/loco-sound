@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node_modules/.bin/serve",
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -24,7 +25,8 @@
     "vue": "2.6.10",
     "vue-template-compiler": "^2.6.10",
     "vuetify": "1.5.14",
-    "howler": "2.1.2"
+    "howler": "2.1.2",
+    "serve": "11.0.1"
   },
   "keywords": [],
   "author": "",

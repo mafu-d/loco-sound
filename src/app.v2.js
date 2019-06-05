@@ -12,7 +12,7 @@ const app = new Vue({
     el: '#app',
     data: {
         locos: [],
-        activeLoco: null
+        activeLoco: null,
     },
     components: {
         Loco,
@@ -20,21 +20,15 @@ const app = new Vue({
     },
 
     mounted() {
-        this.addLoco()
-        EventBus.$on('removeLoco', index => {
-            this.locos.splice(index, 1)
-        })
-        EventBus.$on('updateLocoName', data => {
-            this.locos.splice(data.index, 1, {
-                name: data.name
-            })
-        })
-    },
+        for (var i = 0; i < 5; i++) {
+            this.addLoco()
+        }
+  },
     methods: {
         addLoco() {
             this.locos.push({
                 name: `Loco ${this.locos.length + 1}`,
             })
-        }
+        },
     }
 })
